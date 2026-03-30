@@ -33,7 +33,6 @@ The table below is a **single** run on the held-out **`val`** folder (`dataset_t
 | acc (sphere) | 0.800 |
 | acc (vortex) | 0.813 |
 
-**Plots (val folder)** — `images/test_I_roc.png`, `images/test_I_cm.png`
 
 <table>
 <tr valign="top">
@@ -66,7 +65,7 @@ These metrics are computed on the **train folders (train/val split)**.
 | + oversampling | 0.080 | 0.980 | 0.983 | 0.826 | 0.826 (θ ≈ 0.50) |
 | + oversampling + affine | 0.059 | 0.978 | 0.995 | 0.827 | 0.862 (θ ≈ 0.88) |
 | + oversampling + affine + noise (σ=0.01) | 0.064 | 0.981 | 0.988 | 0.829 | **0.874** (θ ≈ 0.90) |
-| + noise σ=0.5 | 0.146 | 0.938 | 0.977 | 0.619 | 0.712 (θ ≈ 0.82) |
+| + oversampling + affine + noise (σ=0.05)| 0.146 | 0.938 | 0.977 | 0.619 | 0.712 (θ ≈ 0.82) |
 | + pos_weight | 0.316 | 0.953 | 0.983 | 0.693 | 0.797 (θ ≈ 0.95) |
 
 **Takeaway:** Oversampling with small noise (0.01) and affine augmentations gives the strongest metrics.
@@ -82,7 +81,6 @@ The table below is a **single** run on the held-out **test** folder (`dataset_te
 | val_acc | 0.990 |
 | F1 | 0.615 |
 
-**Plots (test folder)** — `images/test_V_roc.png`, `images/test_V_cm.png`
 
 <table>
 <tr valign="top">
