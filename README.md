@@ -33,13 +33,20 @@ The table below is a **single** run on the held-out **`val`** folder (`dataset_t
 | acc (sphere) | 0.800 |
 | acc (vortex) | 0.813 |
 
-**ROC (one-vs-rest, val folder)** — `images/test_I_roc.png`
+**Plots (val folder)** — `images/test_I_roc.png`, `images/test_I_cm.png`
 
-![ROC curves — Test I](images/test_I_roc.png)
-
-**Confusion matrix (val folder)** — `images/test_I_cm.png`
-
-![Confusion matrix — Test I](images/test_I_cm.png)
+<table>
+<tr valign="top">
+<td align="center" width="50%">
+<strong>ROC (one-vs-rest)</strong><br/>
+<img src="images/test_I_roc.png" alt="ROC curves — Test I" width="100%"/>
+</td>
+<td align="center" width="50%">
+<strong>Confusion matrix</strong><br/>
+<img src="images/test_I_cm.png" alt="Confusion matrix — Test I" width="100%"/>
+</td>
+</tr>
+</table>
 
 **Conclusion:** A high ROC AUC (~0.99) means the model’s predicted scores **rank** the classes well, that is, the model usually assigns a higher score to the correct class. The **confusion matrix** makes those errors easy to read at a glance—for example, **no substructure** images being predicted as **sphere**.
 
@@ -75,13 +82,20 @@ The table below is a **single** run on the held-out **test** folder (`dataset_te
 | val_acc | 0.990 |
 | F1 | 0.615 |
 
-**ROC (test folder)** — `images/test_V_roc.png`
+**Plots (test folder)** — `images/test_V_roc.png`, `images/test_V_cm.png`
 
-![ROC curve — Task V](images/test_V_roc.png)
-
-**Confusion matrix (test folder)** — `images/test_V_cm.png`
-
-![Confusion matrix — Task V](images/test_V_cm.png)
+<table>
+<tr valign="top">
+<td align="center" width="50%">
+<strong>ROC</strong><br/>
+<img src="images/test_V_roc.png" alt="ROC curve — Task V" width="100%"/>
+</td>
+<td align="center" width="50%">
+<strong>Confusion matrix</strong><br/>
+<img src="images/test_V_cm.png" alt="Confusion matrix — Task V" width="100%"/>
+</td>
+</tr>
+</table>
 
 **Conclusion:** As in Test I, a high test **AUROC** (~0.99) means the model **orders** lens vs. non-lensed examples well: positives tend to get higher scores than negatives. The **F1** on the test set is moderate (0.615), since **F1** is threshold-dependent, even when **ranking** (**AUROC**) stays strong. That may also reflect distribution shift: the test set has a much lower fraction of lenses than train/validation, which changes the precision–recall tradeoff at any fixed threshold.
 
